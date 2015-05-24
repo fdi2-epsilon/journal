@@ -1,0 +1,20 @@
+
+apply plugin: 'scala'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+    maven {
+        url 'http://repo.typesafe.com/typesafe/releases/'
+    }
+}
+
+dependencies {
+    compile 'com.typesafe.play:play-json_2.11:2.3.8'
+}
+
+compileScala {
+    scalaCompileOptions.additionalParameters = ["-feature"]
+}
+
+mainClassName = 'io.github.lczx.journal.Application'
